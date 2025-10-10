@@ -1,0 +1,298 @@
+/* --- CÀI ĐẶT CHUNG & BIẾN MÀU --- */
+:root {
+    --primary-color: #00aaff; /* Màu xanh dương đặc trưng */
+    --secondary-color: #ffffff;
+    --background-color: #0a0a0a; /* Màu nền đen/xám đậm */
+    --card-background: #1a1a1a; /* Màu nền cho các thẻ card */
+    --text-color: #e0e0e0;
+    --text-muted: #888888;
+    --font-family: 'Inter', sans-serif; /* Font chữ hiện đại (cần import từ Google Fonts) */
+}
+
+/* --- RESET & CƠ BẢN --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+/* --- CÁC NÚT BẤM (BUTTONS) --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+.btn-secondary:hover {
+    background-color: #fff;
+    color: var(--background-color);
+}
+
+/* --- HEADER --- */
+.header {
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: var(--secondary-color);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-icon {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    background: url('backround.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* --- FEATURED PRODUCTS SECTION --- */
+.featured-products, .news {
+    padding: 80px 0;
+}
+
+.product-grid, .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card, .news-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover, .news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 170, 255, 0.1);
+}
+
+.product-card img {
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.product-card p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.btn-view-detail {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* --- NEWS SECTION --- */
+.news-card {
+    text-align: left;
+    padding: 0;
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.news-content {
+    padding: 20px;
+}
+.news-category {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 3px 10px;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.news-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.news-card p {
+    color: var(--text-muted);
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: #000;
+    padding: 60px 0 20px;
+    border-top: 1px solid #222;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul a {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.footer-col ul a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons a {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    color: var(--text-muted);
+}
+
+/* Thêm vào cuối file style.css */
+.header.scrolled {
+    background-color: #0a0a0a; /* Đổi nền thành màu đậm hơn khi cuộn */
+}
