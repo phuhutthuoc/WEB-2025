@@ -133,9 +133,26 @@ img {
     gap: 20px;
 }
 
+.search-box {
+  /* --- Vien bao quanh search --- */
+}
+.style-search input[type="search"] {
+    height: 45px;
+    width: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    background: rgba(255, 255, 255, 0.15); /* nền trong mờ */
+    backdrop-filter: blur(8px); /* hiệu ứng kính mờ */
+    padding: 0 12px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
 .search-icon {
     font-size: 1.2rem;
     color: #fff;
+    cursor: pointer;
 }
 
 /* --- HERO SECTION --- */

@@ -34,7 +34,11 @@
         </ul>
       </nav>
       <div class="header-actions">
-        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+        <a href="#" class="search-icon">
+          <div class="style-search">
+          <input type="search" id="search-icon" name="gsearch" placeholder="Tìm kiếm...">
+          <i class="fas fa-search"></i>
+        </div>
         <a href="#" class="btn btn-primary">Tham gia ngay</a>
       </div>
     </div>
@@ -48,7 +52,62 @@
         <a href="#" class="btn btn-secondary">Khám phá sản phẩm</a>
       </div>
     </section>
+    <section class="featured-products">
+      <div class="container">
+        <h2 class="section-title">SẢN PHẨM NỔI BẬT</h2>
+        <div class="product-grid">
+          
+          <div class="product-card">
+            <img src="RTX3060.jpg" alt="VGA RTX 3060" />
+            <h3>VGA UNIKOON RTX 3060</h3>
+            <p>12G D6 GAMING PRO V2</p>
+            <a href="#" class="btn-view-detail">Xem chi tiết</a>
+            <div class="product-info">
+              <ul>
+                <li>Nhân CUDA: 3584</li>
+                <li>Bộ nhớ: 12GB GDDR6</li>
+                <li>Giao tiếp: 192-bit</li>
+                <li>Kết nối: 3x DisplayPort, 1x HDMI</li>
+                <li>Giá: khoảng 7.500.000đ</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <img src="B760M.webp" alt="Mainboard B760M" />
+            <h3>MAINBOARD B760M</h3>
+            <p>D4 PRO</p>
+            <a href="#" class="btn-view-detail">Xem chi tiết</a>
+            <div class="product-info">
+                <ul>
+                  <li>Socket: LGA1700</li>
+                  <li>Chipset: Intel B760</li>
+                  <li>RAM: DDR4 5333MHz (OC)</li>
+                  <li>Ổ cứng: 2 M.2 PCIe Gen4x4</li>
+                  <li>Giá: khoảng 2.790.000đ</li>
+                </ul>
+              </div>
+          </div>
+          
+          <div class="product-card">
+            <img src="atk-f1.jpg" alt="Chuột Gaming ATK Blazing Sky X1 Ultra Black" />
+            <h3>ATK Blazing Sky X1 Ultra Black</h3>
+            <p>Cảm biến PAW3950 Ultra</p>
+            <a href="#" class="btn-view-detail">Xem chi tiết</a>
+            <div class="product-info">
+              <ul>
+                <li>Mắt đọc: Pixart PAW3395</li>
+                <li>DPI: Tối đa 26000</li>
+                <li>Kết nối: Wireless 2.4Ghz / Bluetooth / Dây</li>
+                <li>Trọng lượng: 55g</li>
+                <li>Giá: khoảng 1.490.000đ</li>
+              </ul>
+            </div>
+          </div>
 
+        </div>
+      </div>
+    </section>
     <section id="mainboard-section">
         
       <div class="container">
@@ -163,62 +222,7 @@
       </div>
     </section>
 
-    <section class="featured-products">
-      <div class="container">
-        <h2 class="section-title">SẢN PHẨM NỔI BẬT</h2>
-        <div class="product-grid">
-          
-          <div class="product-card">
-            <img src="RTX3060.jpg" alt="VGA RTX 3060" />
-            <h3>VGA UNIKOON RTX 3060</h3>
-            <p>12G D6 GAMING PRO V2</p>
-            <a href="#" class="btn-view-detail">Xem chi tiết</a>
-            <div class="product-info">
-              <ul>
-                <li>Nhân CUDA: 3584</li>
-                <li>Bộ nhớ: 12GB GDDR6</li>
-                <li>Giao tiếp: 192-bit</li>
-                <li>Kết nối: 3x DisplayPort, 1x HDMI</li>
-                <li>Giá: khoảng 7.500.000đ</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="product-card">
-            <img src="B760M.webp" alt="Mainboard B760M" />
-            <h3>MAINBOARD B760M</h3>
-            <p>D4 PRO</p>
-            <a href="#" class="btn-view-detail">Xem chi tiết</a>
-            <div class="product-info">
-                <ul>
-                  <li>Socket: LGA1700</li>
-                  <li>Chipset: Intel B760</li>
-                  <li>RAM: DDR4 5333MHz (OC)</li>
-                  <li>Ổ cứng: 2 M.2 PCIe Gen4x4</li>
-                  <li>Giá: khoảng 2.790.000đ</li>
-                </ul>
-              </div>
-          </div>
-          
-          <div class="product-card">
-            <img src="atk-f1.jpg" alt="Chuột Gaming ATK Blazing Sky X1 Ultra Black" />
-            <h3>ATK Blazing Sky X1 Ultra Black</h3>
-            <p>Cảm biến PAW3950 Ultra</p>
-            <a href="#" class="btn-view-detail">Xem chi tiết</a>
-            <div class="product-info">
-              <ul>
-                <li>Mắt đọc: Pixart PAW3395</li>
-                <li>DPI: Tối đa 26000</li>
-                <li>Kết nối: Wireless 2.4Ghz / Bluetooth / Dây</li>
-                <li>Trọng lượng: 55g</li>
-                <li>Giá: khoảng 1.490.000đ</li>
-              </ul>
-            </div>
-          </div>
 
-        </div>
-      </div>
-    </section>
     <section id="keyboard-section"> <div class="container">
         <h2 class="section-title">Các loại Bàn Phím</h2>
         <div class="product-grid">
@@ -375,20 +379,20 @@
           <h4>Thông tin</h4>
           <ul>
             <li><a href="https://www.unikoon.com/" target="_blank">Về Unikoon</a></li>
-            <li><a href="https://unikoon.com/news" target="_blank">Liên hệ</a></li>
+            <li><a href="https://unikoon.com/news" target="_blank">Hotline 18001001</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Theo dõi chúng tôi</h4>
           <div class="social-icons">
             <a href="https://www.facebook.com/profile.php?id=61574853930792" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.youtube.com/@phuhutthuocofficial7869"><i class="fab fa-youtube"></i></a>
             <a href="#"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Unikoon. All rights reserved. Clone by Gemini.</p>
+        <p>&copy; 2025 Unikoon BTL Web</p>
       </div>
     </div>
   </footer>
