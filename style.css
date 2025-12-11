@@ -58,7 +58,10 @@ img {
     font-weight: bold;
     text-transform: uppercase;
     transition: all 0.3s ease;
+<<<<<<< HEAD
     cursor: pointer; /* <-- THÊM MỚI (để đảm bảo là nút) */
+=======
+>>>>>>> 4787611c99a7712928bbe5b5f8582a012465954e
 }
 
 .btn-primary {
@@ -134,6 +137,7 @@ img {
     gap: 20px;
 }
 
+<<<<<<< HEAD
 /* ======================================= */
 /* --- BẮT ĐẦU SỬA LỖI THANH TÌM KIẾM --- */
 /* ======================================= */
@@ -148,6 +152,11 @@ img {
 }
 
 /* 2. Sửa padding cho input để icon không đè lên chữ */
+=======
+.search-box {
+  /* --- Vien bao quanh search --- */
+}
+>>>>>>> 4787611c99a7712928bbe5b5f8582a012465954e
 .style-search input[type="search"] {
     height: 45px;
     width: 200px;
@@ -155,12 +164,17 @@ img {
     outline: none;
     background: rgba(255, 255, 255, 0.15); /* nền trong mờ */
     backdrop-filter: blur(8px); /* hiệu ứng kính mờ */
+<<<<<<< HEAD
     padding: 0 40px 0 12px; /* <-- ĐÃ SỬA: Thêm padding bên phải cho icon */
+=======
+    padding: 0 12px;
+>>>>>>> 4787611c99a7712928bbe5b5f8582a012465954e
     color: #fff;
     font-size: 15px;
     border-radius: 10px;
     transition: all 0.3s ease;
 }
+<<<<<<< HEAD
 
 /* 3. Định vị icon vào bên trong input */
 .style-search .fa-search {
@@ -177,6 +191,13 @@ img {
 /* --- KẾT THÚC SỬA LỖI THANH TÌM KIẾM --- */
 /* ======================================= */
 
+=======
+.search-icon {
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+}
+>>>>>>> 4787611c99a7712928bbe5b5f8582a012465954e
 
 /* --- HERO SECTION --- */
 .hero {
@@ -438,8 +459,11 @@ html {
 /* Cột thông tin */
 .modal-info {
   width: 60%;
+<<<<<<< HEAD
   display: flex; /* <-- THÊM MỚI */
   flex-direction: column; /* <-- THÊM MỚI (để đẩy actions xuống cuối) */
+=======
+>>>>>>> 4787611c99a7712928bbe5b5f8582a012465954e
 }
 
 /* Nút đóng (X) */
@@ -484,6 +508,7 @@ html {
   font-weight: bold;
 }
 
+<<<<<<< HEAD
 /* ================================================= */
 /* --- CSS CHO GIỎ HÀNG BÊN TRONG MODAL (MỚI) --- */
 /* ================================================= */
@@ -522,6 +547,8 @@ html {
 }
 /* ================================================= */
 
+=======
+>>>>>>> 4787611c99a7712928bbe5b5f8582a012465954e
 /* Animation */
 @keyframes fadeIn {
   from {opacity: 0;}
@@ -545,6 +572,7 @@ html {
   .modal-content img {
     height: 250px;
   }
+<<<<<<< HEAD
   .modal-info {
     height: auto;
   }
@@ -652,4 +680,6 @@ html {
   align-items: center;
   justify-content: center;
   line-height: 1;
+=======
+>>>>>>> 4787611c99a7712928bbe5b5f8582a012465954e
 }
