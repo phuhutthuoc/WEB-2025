@@ -58,6 +58,7 @@ img {
     font-weight: bold;
     text-transform: uppercase;
     transition: all 0.3s ease;
+    cursor: pointer; /* <-- THÊM MỚI (để đảm bảo là nút) */
 }
 
 .btn-primary {
@@ -133,9 +134,20 @@ img {
     gap: 20px;
 }
 
+/* ======================================= */
+/* --- BẮT ĐẦU SỬA LỖI THANH TÌM KIẾM --- */
+/* ======================================= */
+
 .search-box {
   /* --- Vien bao quanh search --- */
 }
+
+/* 1. Biến .style-search thành 1 container */
+.style-search {
+  position: relative;
+}
+
+/* 2. Sửa padding cho input để icon không đè lên chữ */
 .style-search input[type="search"] {
     height: 45px;
     width: 200px;
@@ -143,17 +155,28 @@ img {
     outline: none;
     background: rgba(255, 255, 255, 0.15); /* nền trong mờ */
     backdrop-filter: blur(8px); /* hiệu ứng kính mờ */
-    padding: 0 12px;
+    padding: 0 40px 0 12px; /* <-- ĐÃ SỬA: Thêm padding bên phải cho icon */
     color: #fff;
     font-size: 15px;
     border-radius: 10px;
     transition: all 0.3s ease;
 }
-.search-icon {
-    font-size: 1.2rem;
-    color: #fff;
-    cursor: pointer;
+
+/* 3. Định vị icon vào bên trong input */
+.style-search .fa-search {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  cursor: pointer;
 }
+/* (Đã xóa .search-icon cũ vì không dùng) */
+
+/* ======================================= */
+/* --- KẾT THÚC SỬA LỖI THANH TÌM KIẾM --- */
+/* ======================================= */
+
 
 /* --- HERO SECTION --- */
 .hero {
@@ -415,6 +438,8 @@ html {
 /* Cột thông tin */
 .modal-info {
   width: 60%;
+  display: flex; /* <-- THÊM MỚI */
+  flex-direction: column; /* <-- THÊM MỚI (để đẩy actions xuống cuối) */
 }
 
 /* Nút đóng (X) */
@@ -459,6 +484,44 @@ html {
   font-weight: bold;
 }
 
+/* ================================================= */
+/* --- CSS CHO GIỎ HÀNG BÊN TRONG MODAL (MỚI) --- */
+/* ================================================= */
+.modal-actions {
+  margin-top: auto; /* <-- THÊM MỚI (đẩy khối này xuống cuối modal) */
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#modal-quantity {
+  width: 60px;
+  padding: 8px;
+  font-size: 1rem;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Nút "Thêm vào giỏ" */
+#modal-add-to-cart {
+  width: auto; /* Cho nút co giãn theo nội dung */
+  flex-grow: 1; /* Cho nút lấp đầy không gian còn lại */
+}
+
+/* Thông báo (vd: Đã thêm thành công) */
+#modal-cart-message {
+  color: lime;
+  font-weight: bold;
+  margin-top: 10px;
+  display: none; /* Ẩn ban đầu */
+}
+/* ================================================= */
+
 /* Animation */
 @keyframes fadeIn {
   from {opacity: 0;}
@@ -482,59 +545,111 @@ html {
   .modal-content img {
     height: 250px;
   }
-}
-/* Thanh công cụ */
-.navbar {
-  background: #222;
-  color: #fff;
-  padding: 10px 0;
-}
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.navbar .logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-.navbar a {
-  color: white;
-  text-decoration: none;
-}
-.navbar a.active {
-  color: #ffcc00;
+  .modal-info {
+    height: auto;
+  }
+  .modal-actions {
+    margin-top: 20px; /* Bỏ auto trên mobile */
+  }
 }
 
-/* Popup hiển thị tin tức */
-.popup {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-.popup.hidden {
-  display: none;
-}
-.popup-content {
-  background: #fff;
-  padding: 20px;
-  width: 70%;
-  max-width: 800px;
-  border-radius: 10px;
+/* ... (CSS cho .navbar, .popup - không liên quan lắm) ... */
+
+/* Div bọc ngoài form, cần thiết để định vị dropdown */
+.search-container {
   position: relative;
 }
-.popup-content .close-btn {
+
+/* Box chứa kết quả, ban đầu ẩn */
+#live-search-results {
+  display: none; /* Ban đầu ẩn */
   position: absolute;
-  top: 10px; right: 15px;
-  font-size: 24px;
+  top: 100%; /* Hiện ngay dưới thanh search */
+  left: 0;
+  width: 350px; /* Tăng chiều rộng để chứa kết quả */
+  max-height: 400px;
+  overflow-y: auto;
+  background: var(--card-background);
+  border: 1px solid #333;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  z-index: 1001; /* Phải cao hơn header */
+  margin-top: 10px; /* Một chút khoảng cách */
+}
+
+/* Kiểu cho mỗi item kết quả */
+.live-search-item {
+  display: flex; /* Dùng flexbox cho ảnh và chữ */
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
   cursor: pointer;
+}
+.live-search-item:last-child {
+  border-bottom: none;
+}
+.live-search-item:hover {
+  background-color: var(--primary-color);
+}
+
+/* Ảnh thumbnail của sản phẩm */
+.live-search-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 12px;
+}
+
+/* Tên sản phẩm */
+.live-search-item .item-name {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.live-search-item:hover .item-name {
+  color: #fff;
+}
+
+/* Thông báo "không tìm thấy" */
+.live-search-no-result {
+  padding: 15px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+
+/* ======================================= */
+/* --- CSS CHO ICON GIỎ HÀNG (MỚI) --- */
+/* ======================================= */
+
+.cart-icon {
+  position: relative;
+  color: var(--text-color);
+  font-size: 1.25rem;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.cart-icon:hover {
+  color: var(--primary-color);
+}
+
+/* Con số nhỏ thông báo số lượng */
+#cart-item-count {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }

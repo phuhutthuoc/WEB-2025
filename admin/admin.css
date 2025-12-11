@@ -1,0 +1,195 @@
+/* --- Import Font & Biến Màu (lấy từ style.css) --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #00aaff;
+    --background-color: #0a0a0a;
+    --card-background: #1a1a1a;
+    --text-color: #e0e0e0;
+    --text-muted: #888888;
+    --font-family: 'Inter', sans-serif;
+}
+
+/* --- Cài đặt chung --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* --- Trang Login --- */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    background: var(--card-background);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 170, 255, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-container h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid var(--primary-color);
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.error-message {
+    color: #ff4d4d;
+    background: rgba(255, 77, 77, 0.1);
+    border: 1px solid #ff4d4d;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* --- Trang Dashboard --- */
+.admin-header {
+    background: var(--card-background);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.admin-header h1 {
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.admin-nav a {
+    color: var(--text-color);
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.admin-nav a.btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+.admin-nav a.btn-primary:hover {
+    background: #007bff;
+}
+
+.admin-nav a.btn-logout {
+    color: #ff4d4d;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: var(--card-background);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-table th, 
+.admin-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.admin-table th {
+    background: #222;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.admin-table tr:hover {
+    background: #252525;
+}
+
+.admin-table .actions a {
+    margin-right: 10px;
+}
+
+.admin-table .actions a.edit {
+    color: var(--primary-color);
+}
+
+.admin-table .actions a.delete {
+    color: #ff4d4d;
+}
+
+.admin-nav a.btn-logout {
+    color: #ff4d4d;
+}
+
+.admin-nav a.btn {
+    width: auto; 
+}

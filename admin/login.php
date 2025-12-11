@@ -21,14 +21,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!doctype html>
 <html lang="vi">
-<head><meta charset="utf-8"><title>Đăng nhập Admin</title></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập Admin | UNIKOON</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
 <body>
-<h2>Đăng nhập quản trị</h2>
-<?php if($err) echo '<p style="color:red">'.htmlspecialchars($err).'</p>'; ?>
-<form method="post">
-  <label>Username: <input name="username"></label><br>
-  <label>Password: <input name="password" type="password"></label><br>
-  <button>Đăng nhập</button>
-</form>
+
+  <div class="login-wrapper">
+    <div class="login-container">
+      <h2>Đăng nhập quản trị</h2>
+      
+      <?php if($err): ?>
+        <p class="error-message"><?php echo htmlspecialchars($err); ?></p>
+      <?php endif; ?>
+
+      <form method="post">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input id="password" name="password" type="password" required>
+        </div>
+        <button typeS="submit" class="btn">Đăng nhập</button>
+      </form>
+    </div>
+  </div>
+
 </body>
 </html>

@@ -1,0 +1,146 @@
+SQL TRONG phpmyadmin 
+
+CREATE TABLE products (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  description TEXT NULL,
+  image_url VARCHAR(255) NULL,
+  price VARCHAR(100) NULL,
+  specs TEXT NULL,
+  category VARCHAR(100) NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+INSERT INTO products 
+  (id, name, description, image_url, price, specs, category) 
+VALUES
+(
+  NULL, 
+  'MAINBOARD B760M', 
+  'D4 PRO – Phù hợp cho hệ thống gaming tầm trung.', 
+  'B760M.webp', 
+  'khoảng 2.790.000đ', 
+  '<ul><li>Socket: LGA1700</li><li>Chipset: Intel B760</li><li>RAM: DDR4 5333MHz (OC)</li><li>Ổ cứng: 2 M.2 PCIe Gen4x4</li></ul>', 
+  'mainboard'
+),
+(
+  NULL, 
+  'MAINBOARD ATX', 
+  'Chuẩn ATX với nhiều khe cắm mở rộng, hỗ trợ đa GPU.', 
+  'main-atx.jpg', 
+  'từ 3.200.000đ đến 6.500.000đ tùy dòng', 
+  '<ul><li>Socket: LGA1200 / LGA1700</li><li>Chipset: Intel Z590 / B760 / X670</li><li>RAM: DDR4 hoặc DDR5, tối đa 128GB</li><li>Khe mở rộng: 3 PCIe x16, 2 PCIe x1</li><li>Ổ cứng: 3 M.2 NVMe, 6 SATA3</li></ul>', 
+  'mainboard'
+),
+(
+  NULL, 
+  'MAINBOARD MINI-ITX', 
+  'Kích thước nhỏ gọn, lý tưởng cho hệ thống mini PC.', 
+  'main-itx.jpg', 
+  'khoảng 2.500.000đ đến 4.000.000đ', 
+  '<ul><li>Socket: AM5 / LGA1700</li><li>Chipset: Intel B760 / AMD B650</li><li>RAM: 2 khe DDR4/DDR5, tối đa 64GB</li><li>Khe mở rộng: 1 PCIe x16</li><li>Ổ cứng: 2 M.2 NVMe, 2 SATA3</li></ul>', 
+  'mainboard'
+),
+(
+  NULL, 
+  'VGA UNIKOON RTX 3060', 
+  '12G D6 GAMING PRO V2 - Cân bằng hiệu năng/giá thành.', 
+  'RTX3060.jpg', 
+  'khoảng 7.500.000đ', 
+  '<ul><li>Nhân CUDA: 3584</li><li>Bộ nhớ: 12GB GDDR6</li><li>Giao tiếp: 192-bit</li><li>Kết nối: 3x DisplayPort, 1x HDMI</li></ul>', 
+  'vga'
+),
+(
+  NULL, 
+  'VGA UNIKOON RTX 4070', 
+  'SUPER 12G - Hiệu năng cao, hỗ trợ DLSS 3 và Ray Tracing.', 
+  'RTX4070.jpg', 
+  'khoảng 15.990.000đ', 
+  '<ul><li>Nhân CUDA: 7168</li><li>Bộ nhớ: 12GB GDDR6X</li><li>Giao tiếp: 192-bit</li><li>Kết nối: 3x DP 1.4a, 1x HDMI 2.1</li></ul>', 
+  'vga'
+),
+(
+  NULL, 
+  'VGA UNIKOON RX 7800 XT', 
+  '16G GAMING OC - Đối thủ nặng ký từ AMD với 16GB VRAM.', 
+  'RX7800XT.jpg', 
+  'khoảng 13.500.000đ', 
+  '<ul><li>Stream Processors: 3840</li><li>Bộ nhớ: 16GB GDDR6</li><li>Giao tiếp: 256-bit</li><li>Kết nối: 2x DP 2.1, 2x HDMI 2.1</li></ul>', 
+  'vga'
+),
+(
+  NULL, 
+  'BÀN PHÍM Aula F75', 
+  '75% phím, trang bị LED RGB, switch Blue.', 
+  'aula-f75.jpg', 
+  'khoảng 1.290.000đ', 
+  '<ul><li>Loại Switch: Unikoon Blue (Clicky)</li><li>Layout: 75%</li><li>Kết nối: Dây USB-C</li><li>LED: RGB 16.8 triệu màu</li></ul>', 
+  'keyboard'
+),
+(
+  NULL, 
+  'BÀN PHÍM CƠ UNIKOON K87', 
+  'Layout TKL (87 phím) nhỏ gọn, switch Brown (Tactile).', 
+  'keyboard-tkl.jpg', 
+  'khoảng 1.890.000đ', 
+  '<ul><li>Loại Switch: Unikoon Brown (Tactile)</li><li>Layout: TKL 87 phím</li><li>Kết nối: Không dây (Wireless 2.4Ghz / Bluetooth)</li><li>LED: Đơn sắc (Trắng)</li></ul>', 
+  'keyboard'
+),
+(
+  NULL, 
+  'BÀN PHÍM CƠ UNIKOON K68', 
+  'Layout 65% siêu nhỏ gọn, hỗ trợ Hot-swap.', 
+  'keyboard-65.jpg', 
+  'khoảng 2.150.000đ', 
+  '<ul><li>Loại Switch: Hỗ trợ Hot-swap (Gateron Red)</li><li>Layout: 65% (68 phím)</li><li>Kết nối: Dây USB-C (tháo rời)</li><li>Keycap: PBT Double-shot</li></ul>', 
+  'keyboard'
+),
+(
+  NULL, 
+  'CHUỘT GAMING UNIKOON ATK X1 PRO', 
+  'Chuột không dây siêu nhẹ, mắt đọc cao cấp 3395.', 
+  'atk-f1.jpg', 
+  'khoảng 1.490.000đ', 
+  '<ul><li>Mắt đọc: Pixart PAW3395</li><li>DPI: Tối đa 26000</li><li>Kết nối: Wireless 2.4Ghz / Bluetooth / Dây</li><li>Trọng lượng: 55g</li></ul>', 
+  'mouse'
+),
+(
+  NULL, 
+  'CHUỘT GAMING UNIKOON Zowie EC2', 
+  'Thiết kế công thái học cho người thuận tay phải.', 
+  'zowie-ec2.jpg', 
+  'khoảng 1.290.000đ', 
+  '<ul><li>Mắt đọc: Pixart PAW3370</li><li>DPI: Tối đa 19000</li><li>Kết nối: Dây USB-C (dây dù siêu mềm)</li><li>Switch: Omron 50 triệu lượt nhấn</li></ul>', 
+  'mouse'
+),
+(
+  NULL, 
+  'CHUỘT GAMING UNIKOON Razer DeathAdder V3 Pro', 
+  'Chuột gaming Razer DeathAdder V3 Pro, giá tốt.', 
+  'dav3-pro.jpg', 
+  'khoảng 2.350.000đ', 
+  '<ul><li>Mắt đọc: PAW 3395</li><li>DPI: Tối đa 40000</li><li>Kết nối: Dây, USB , Donge 8k</li><li>LED: RGB viền</li></ul>', 
+  'mouse'
+),
+(
+  NULL, 
+  'BÀN PHÍM CƠ ANGRY MIAO CYBERBOARD NOVEL 3 EUPHORIA', 
+  'Phiên bản giới hạn: 293 chiếc toàn cầu.', 
+  'angry.png', 
+  'khoảng 20.400.000đ', 
+  '<ul><li>Bấm êm</li><li>hệ thống đèn LED Matrix cải tiến</li><li>khả năng tùy chỉnh sâu và trải nghiệm gõ êm ái</li></ul>', 
+  'keyboard'
+);
+
+
+
+
+
+
+('duong', '$2y$10$LaMFL5MvhE/LhRcr/JEJBeN9D7agapKyG3d9dsp6rC.v1Ech7NjR.'), --1234567
+('bao', '$2y$10$tSrWhn8yyqUHA20ZBZhklObx0XPH45zU6xezhsc8mooqnyPu9M5vy'), -- 12345678
+('phu', '$2y$10$9SsvSTTTk9kFqAJuEvJ7N.RM1poLKdEH4ikDHPLGu02JKdVVg9vmC'), --123456789
+('dat', '$2y$10$Uk8cyn5/OGtgkDKXaR7t8.DfoGeWGJBoBIUrStvJM8jAMhB7g/F9q'), --12345678910
+('hung', '$2y$10$sCSzEr5pk9.8t82cnfd3Me98KmVL8F3jSYsaoJTWjNRncM78LK1Dq'); -- 1234567891011
